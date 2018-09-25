@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,10 +20,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import us.singhlovepreet.Dao.CountryDao;
-import us.singhlovepreet.model.PersonForm;
+
 import us.singhlovepreet.model.Trailer;
 import us.singhlovepreet.model.Vehicle;
-import us.singhlovepreet.model.Vehicle_Trailer;
+
 import us.singhlovepreet.service.TrailerService;
 import us.singhlovepreet.service.VehicleService;
 
@@ -49,13 +50,18 @@ public class ApplicationController
 
 	
 	@RequestMapping("/admin")
-	public String getadmin(@RequestParam("id") int id)
+	public String getadmin()
 	{
-		
-		System.out.println("Value of attribute is "+id);
+	
 //		
 //	model.addAttribute("value",request.getAttribute("country"));
-		return "adminview";
+		return "Page2";
+	}
+	
+	@PostMapping("/Page3")
+	public String getpage3()
+	{
+		return "Page3";
 	}
 
 	

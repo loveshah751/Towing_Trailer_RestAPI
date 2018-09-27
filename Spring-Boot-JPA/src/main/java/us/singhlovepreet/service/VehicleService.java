@@ -27,6 +27,12 @@ public class VehicleService
 	
 	
 	
+	public Vehicle getvehcilebyname(String name) 
+	{
+		
+	return	dao.findByModel(name);
+		
+	}
 	
 	public Vehicle getvehicle(Integer id)
 	{

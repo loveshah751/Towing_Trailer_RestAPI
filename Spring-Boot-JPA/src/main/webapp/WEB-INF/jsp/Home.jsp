@@ -5,102 +5,110 @@
   <head>
     <meta charset="UTF-8" />
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  
+   <!-- Division CSS -->
+  <link rel="stylesheet" href="http://lovepreetsingh.us/CustomCSS/division.css">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="container">
-   	<form action="/admin" method="get" >
-     <span>Trailer</span>
-     <select class="btn btn-info">
+  
+  
+<!--   Starting main Div -->
+  <div class="container">
+
+
+<!-- Header Div started -->
+  <div class="row">
+ <!--  Inner Div started -->
+    <div class="col center" style=" border: 1px solid black;
+    background-color: #000;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px; text-align:center;
+    color:#ffffff">
+    <img src="http://lovepreetsingh.us/CustomCSS/RAM_logo.png" height=200px; width=auto>
+    <h1>Welcome to RAM Towing Trailers</h1>
+     
+    <!-- Inner Div Ended -->
+ </div>
+ <!-- Header Div Ended -->
+ </div>
+
+ 	<!-- Division of Two divs vertically started -->
+    <div class="row">
+    
+    <!-- First Div Started -->
+  <div class="column" style="background-color:#FFF">
+  
+  <!-- Inner Div started -->
+    <div class="wrapper">
+    <form class="form-signin" action="login" method="post">
+      <h2 class="form-signin-heading">Admin Login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" /><br>
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/><br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+     <!-- Inner Div Ended -->
+  </div>
+ <!--  End First Div partition -->
+  </div>
+  
+  <!-- Second Div of Partition Started -->
+  <div class="column" style="background-color:#FFF">
+    <h2>Fill the RAM Trailer Information</h2>
+   	<form action="/home" method="Post" >
+   	
+   	<!-- Form started -->
+   	<div class="form-group">
+   	
+   	<h7 for="vehicle"><b>RAM Models</b></h7>
+   	
+   	<select class="btn btn-info" name="vehicle" required>
   	 <option>Select</option>
-     <c:forEach var="trailer" items="${country}">
-     <option name=${trailer.id}>${trailer.model}
+     <c:forEach var="vehicle" items="${vehicles}">
+     <option>${vehicle.model}</option>
+      </c:forEach>
+      </select>
+      	&nbsp <h7 for="vehicle"><b>Trailer</b></h7>
+     <select class="btn btn-info" name="trailer" required>
+  	 <option>Select</option>
+     <c:forEach var="trailer" items="${trailers}">
+     <option name=${trailer.model}>${trailer.model}
      </option>
       </c:forEach>
       </select>
-     <span>Vehicle</span>
-     <select class="btn btn-info">
-  	 <option>Select</option>
-     <c:forEach var="vehicle" items="${result}">
-     <option>${vehicle.name}</option>
-      </c:forEach>
-      </select>
-      
-      <br><span>Trailer Towing Capacity</span>
-      <input type="text" id="tCapacity" placeholder="Enter value">
-       <br><span>Trailer Towing Capacity</span>
-       <input type="text" id=vpayload placeholder="Enter value">
-    <br><button type="submit">Submit</button>
-    </form>
-    
-  <%--  <form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+   
+ <!-- Form Div Ended -->
+  	</div>
+   	
+    <h4><b>Trailer Towing Capacity</b></h4>
+      <input type="text" class="frm-group" placeholder="Please Enter the Value" name="capacity" required autofocus="" />
+      <h4><b>Custom Vehicle Payload</b></h4>
+      <input type="text" placeholder="Please Enter the Value" name="payload" required autofocus /><br>
+      <br><button type="submit" class="btn btn-primary">Submit</button>
+  		
 </form>
-    
-    
-    
-    
-    
-  
-  
-	<select class="btn btn-info">
-  <option>Select</option>
-    <c:forEach var="trailer" items="${country}">
-     <option>${trailer.model}</option>
-      </c:forEach>
-  
-</select>
-     --%>
-    
+<!-- Second Div Partition finished -->
+</div>
+
+
+
+ <!-- End of Division Div -->
   </div>
+  
+  
+  <!-- End of Container Div -->
+  </div>
+  
+ 
+  
+  
+  
+  
     
   </body>
   

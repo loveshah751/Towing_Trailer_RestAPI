@@ -9,4 +9,5 @@ import us.singhlovepreet.model.Trailer;
 public interface TrailerDao extends JpaRepository<Trailer, Integer>
 {
 
+	Trailer findByModel(String name);
 }

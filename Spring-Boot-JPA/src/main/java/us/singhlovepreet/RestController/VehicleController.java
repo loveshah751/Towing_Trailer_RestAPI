@@ -51,27 +51,7 @@ public class VehicleController
 	}
 	
 	
-	
-	
-	
-//	@Autowired
-//	private LoginService lgservice;
-//	
-//	@GetMapping("/login/{id}")
-//	public Login getlogin(@PathVariable("id") int myid)
-//	{
-//		
-//		return lgservice.getbyid(myid);
-//		
-//	}
-//	
-//	@GetMapping("/login/{name}")
-//	public Login getloginbyusername(@PathVariable("name") int myname)
-//	{
-//		
-//		return lgservice.getbyid(myname);
-//		
-//	}
+
 
 
 }

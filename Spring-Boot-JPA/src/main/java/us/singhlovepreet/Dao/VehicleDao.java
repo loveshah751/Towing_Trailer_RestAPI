@@ -9,4 +9,5 @@ import us.singhlovepreet.model.Vehicle;
 public interface VehicleDao extends CrudRepository<Vehicle, Integer>
 {
 
+	Vehicle findByModel(String name);
 }

@@ -36,7 +36,7 @@ public class LoginService
 	}
 	
 	
-	public List<Login> getbyusername(String name)
+	public Login getbyusername(String name)
 	{
 		return lgdao.findByName(name);
 	}

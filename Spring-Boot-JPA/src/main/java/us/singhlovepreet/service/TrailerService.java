@@ -25,6 +25,11 @@ public class TrailerService
 	}
 	
 	
+	public Trailer getTrailerByName(String name)
+	{
+		return	tdao.findByModel(name);
+	}
+	
 	public Trailer getbyid(int id)
 	{
 		return tdao.findById(id).get();

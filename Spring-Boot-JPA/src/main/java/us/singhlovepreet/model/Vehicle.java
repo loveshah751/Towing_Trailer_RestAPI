@@ -16,8 +16,7 @@ public class Vehicle
 	@Id
 	private int v_id;
 	
-	@Column(name="model")
-	private  String name;
+	private  String model;
 	
 	@Column(name="GVM")
 	private int gvm;
@@ -29,34 +28,37 @@ public class Vehicle
 	
 	private int max_towing;
 
-	
+	@Column(name="max_payload")
+	private int v_payload;
 //	@ManyToOne
 //	private Trailer trailer;
 	
-	
-	public Vehicle()
-	{
-		
-	}
-	
-	
-	public Vehicle(int v_id, String name, int gvm, int gcm, int kerb_weight, int v_payload,
-			int max_towing) {
-		super();
-		this.v_id = v_id;
-		this.name = name;
-		this.gvm = gvm;
-		this.gcm = gcm;
-		this.kerb_weight = kerb_weight;
-//		this.trailer = trailer;
-		this.v_payload = v_payload;
-		this.max_towing = max_towing;
-	}
 
+	
+	
+	
+	
 
 	public int getV_id() {
 		return v_id;
 	}
+
+
+	public Vehicle() {
+		
+	}
+
+
+	public Vehicle(int v_id, String model, int gvm, int gcm, int kerb_weight, int max_towing, int v_payload) {
+	super();
+	this.v_id = v_id;
+	this.model = model;
+	this.gvm = gvm;
+	this.gcm = gcm;
+	this.kerb_weight = kerb_weight;
+	this.max_towing = max_towing;
+	this.v_payload = v_payload;
+}
 
 
 	public void setV_id(int v_id) {
@@ -64,13 +66,13 @@ public class Vehicle
 	}
 
 
-	public String getName() {
-		return name;
+	public String getModel() {
+		return model;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
+	public void setModel(String model) {
+		this.model = model;
 	}
 
 
@@ -124,8 +126,7 @@ public class Vehicle
 	}
 
 
-	@Column(name="max_payload")
-	private int v_payload;
+	
 	
 	
 	

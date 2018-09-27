@@ -27,7 +27,7 @@ public class LoginController
 	}
 
 	@GetMapping("/username/{name}")
-	public List<Login> getbyname(@PathVariable("name") String name)
+	public Login getbyname(@PathVariable("name") String name)
 	{
 		return lgser.getbyusername(name);
 	}

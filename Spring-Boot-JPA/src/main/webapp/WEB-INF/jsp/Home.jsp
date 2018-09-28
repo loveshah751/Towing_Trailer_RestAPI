@@ -77,7 +77,7 @@
      <select class="btn btn-info" name="trailer" required>
   	 <option>Select</option>
      <c:forEach var="trailer" items="${trailers}">
-     <option name=${trailer.model}>${trailer.model}
+     <option>${trailer.model}
      </option>
       </c:forEach>
       </select>

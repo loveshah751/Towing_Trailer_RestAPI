@@ -31,6 +31,7 @@
     <img src="http://lovepreetsingh.us/CustomCSS/RAM_logo.png" height=200px; width=auto>
     <h1>Welcome to RAM Towing Trailers</h1>
     <!-- Inner Div Ended -->
+    <form action="/viewtables" method="Post"><button type="submit" class="btn btn-success">View Table</button> </form>
  </div>
  <!-- Header Div Ended -->
  </div>
@@ -39,7 +40,7 @@
 
 <c:when test="${ mode =='Authorised'}">
 	
-	<h1 style="text-align:center"> <mark>Welcome to Admin Portal <mark></h1>
+	<h1 style="text-align:center"> <mark> Welcome to Admin Portal <mark></h1>
 	<h3 style="text-align:center"> Add New Entry in the Database </h3>
 	<div style="margin-left:50%">
 	<form action="/logout" method="post"><button type="submit" class="btn btn-danger">Logout</button> </form>

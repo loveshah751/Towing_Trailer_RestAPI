@@ -231,6 +231,7 @@ public class ApplicationController
 		}
 			
 	}
+
 	
 	@PostMapping(value="/admin")
 	public String addVehicle(@RequestParam("model") String model,
@@ -326,12 +327,9 @@ public class ApplicationController
 		List<Vehicle> myvehicle=vehicleservice.getallVehicle();
 		List<Trailer> mytrailer=trailerservice.getall();
 		model.addAttribute("vehicles", myvehicle);
-		model.addAttribute("trailer", mytrailer);
+		model.addAttribute("trailers", mytrailer);
 		request.setAttribute("mode","Authorised");
-		request.setAttribute("mode", "vehicleTable");
-		request.setAttribute("mode", "trailerTable");
-		
-		return "Admin";
+		return "AdminTable";
 	}
 	
 

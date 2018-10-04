@@ -5,9 +5,9 @@
 # Aussie RAM Towing Trailer Web Application in Java (Spring Boot) 
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/iluwatar/java-design-patterns/master/LICENSE.md)
 
-
-
-![Project Logo](/Users/lovepreetsingh/Desktop/Ram_towing_truck.png)
+Project_desc.png
+![Project Logo](
+https://github.com/loveshah751/Towing_Trailer_RestAPI/blob/master/Spring-Boot-JPA/Images/Ram_towing_truck.png)
 
 
 # Introduction
@@ -23,7 +23,8 @@ As well as understanding the different factors, you also need to master towing t
 
 Before you can work out what vehicle you need, you need to be clear on several key towing terms. While this can feel overwhelming, it is not as difficult as it may seem. So, let’s get clarity. The table below shows the key items you need to understand when selecting a tow vehicle and how they relate to each other.
 
-![Project Logo](/Users/lovepreetsingh/Desktop/Project_desc.png)
+![Project Logo](
+https://github.com/loveshah751/Towing_Trailer_RestAPI/blob/master/Spring-Boot-JPA/Images/Project_desc.png)
 
 ##**Kerb weight**
 This is the empty weight of a vehicle with a full tank of fuel, and doesn’t include payload including passengers, luggage and accessories such as bullbars and roof racks. 
@@ -50,7 +51,8 @@ The MAXIMUM weight that the trailer can carry (Everything not part of TTM)
 ##**TBD (Tow-Ball Down-weight)**
 The weight a trailer puts on the tow-ball (tow bar) when connected to the vehicle.
 
-![Project Logo](/Users/lovepreetsingh/Desktop/trailer_explain.png)
+![Project Logo](
+https://github.com/loveshah751/Towing_Trailer_RestAPI/blob/master/Spring-Boot-JPA/Images/trailer_explain.png)
 
 ****
 
@@ -99,7 +101,8 @@ This identifies how much weight is available till you hit your GCM. This weight 
 # Get What YOU Need
 Ram trucks are the go-to tow vehicle in Australia. Nothing tows Like a Ram Truck. Nothing. Ram trucks give you More – More Space, More Power, and More Towing capability than anyone else on the market. Now you know your numbers and what you need to tow, you can be sure you’ll find exactly what you need in a Ram Truck.
 
-![Project Logo](/Users/lovepreetsingh/Desktop/RAM_Aussie.png)
+![Project Logo](
+https://github.com/loveshah751/Towing_Trailer_RestAPI/blob/master/Spring-Boot-JPA/Images/RAM_Aussie.png)
 
 # Software Requirements 
 1.) **JAVA 1.8 (version 8)**. Check your java version by simpling typing command java -Version on CMD (Windows), Terminal(MAC/Linux).

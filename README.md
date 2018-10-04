@@ -3,7 +3,7 @@
      display it as such, e.g. website) -->
 
 # Aussie RAM Towing Trailer Web Application in Java (Spring Boot) 
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/iluwatar/java-design-patterns/master/LICENSE.md)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/loveshah751/Towing_Trailer_RestAPI/master/LICENSE)
 
 ![Project Logo](
 https://github.com/loveshah751/Towing_Trailer_RestAPI/blob/master/Spring-Boot-JPA/Images/Ram_towing_truck.png)

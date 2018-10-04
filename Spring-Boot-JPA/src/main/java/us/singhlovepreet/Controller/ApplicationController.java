@@ -73,10 +73,33 @@ public class ApplicationController
 		Payload_entered=payload;
 		
 		vehicle_name=myvehicle;
+		int myid = 0;
 		
 		Vehicle return_vehicle=vehicleservice.getvehcilebyname(myvehicle);
-		Trailer return_trailer=trailerservice.getTrailerByName(mytrailer);	
+//		Trailer return_trailer=trailerservice.getTrailerByName(mytrailer);	
+		
+		
 	
+		List<Trailer> demo=trailerservice.getall();
+		
+		for(int i=0;i<demo.size();i++)
+		{
+			
+			if(demo.get(i).getModel().trim().equals(mytrailer.trim()))
+			{
+				System.out.println("My trailers equals is "+demo.get(i).getModel());
+				myid=demo.get(i).getId();
+			}
+			
+		}
+		
+		
+		
+		
+		System.out.println(" my Trailer is "+ myid);
+		
+		
+		Trailer return_trailer=trailerservice.getbyid(myid);
 		
 		model.addAttribute("kerbweight", return_vehicle.getKerb_weight());
 		model.addAttribute("v_payload", return_vehicle.getV_payload());
@@ -117,12 +140,13 @@ public class ApplicationController
 			@RequestParam("TBD") int tbd,@RequestParam("ATM") int atm,
 			Model model)
 	{
+
+		
 		Vehicle vehicle=vehicleservice.getvehcilebyname(vehicle_name);
 		
 		Integer GVM=vehicle.getGvm();
 		
 		Integer gvm_remaining=GVM - final_kerb - Payload_entered -tbd;
-			
 		Integer gcm=vehicle.getGcm();
 	
 		model.addAttribute("gvm_rem", gvm_remaining);

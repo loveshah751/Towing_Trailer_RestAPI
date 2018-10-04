@@ -8,6 +8,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ <link rel="stylesheet" href="http://lovepreetsingh.us/CustomCSS/popstyle.css">
+
+<script src="http://lovepreetsingh.us/CustomCSS/popscript.js"></script>
+
 </head>
 <body>
 
@@ -29,13 +34,27 @@
     <h1>Welcome to RAM Towing Trailers</h1>
      
     <!-- Inner Div Ended -->
+    <form action="/home">
+<button type="submit" class="btn btn-danger">Home</button>
+</form>
+
+<div class="popup" onclick="myFunction()" align="center">
+  <h1>
+   <input type="button" class="form-control btn btn-primary"value="Check the Results">
+     </h1>
+ <c:if test = "${gvm_rem > 0}">
+         <span class="popuptext" id="myPopup">Trailer is Compatible</span>
+      </c:if>
+  <span class="popuptext" id="myPopup">Sorry Trailer is not Compatible!</span>
+</div>
+
  </div>
+ 
  <!-- Header Div Ended -->
  </div>
 <div style="text-align:center">
-<h1> Here is the final information about your Selection</h1>
+<h1> Results!</h1>
 </div>
-
 <div>
 <form action="home" method="post">
   <div class="form-group">
@@ -48,7 +67,6 @@
 <label>GCM </label>
 <input type="text"  class="form-control" name="ATM" value="<c:out value="${gcm}"/>" readonly>
 </div>
-<button type="submit" class="btn btn-danger">Home</button>
 </form>
 
 </div>

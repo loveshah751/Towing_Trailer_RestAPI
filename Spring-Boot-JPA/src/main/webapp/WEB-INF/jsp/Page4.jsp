@@ -34,7 +34,7 @@
     <h1>Welcome to RAM Towing Trailers</h1>
      
     <!-- Inner Div Ended -->
-    <form action="/home">
+    <form action="/adminhome">
 <button type="submit" class="btn btn-danger">Home</button>
 </form>
 

@@ -1,30 +1,19 @@
 package us.singhlovepreet.Controller;
 
 
-import java.awt.PageAttributes.MediaType;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import javax.print.attribute.standard.Media;
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-import javax.servlet.RequestDispatcher;
+
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.context.request.RequestAttributes;
-
 import us.singhlovepreet.model.Login;
 import us.singhlovepreet.model.Trailer;
 import us.singhlovepreet.model.Vehicle;
@@ -54,14 +43,41 @@ public class ApplicationController
 	@GetMapping("/home")
 	public String gethome(Model model)
 	{
+		return "Home";
+	}
+	
+	
+	
+	@GetMapping("/adminhome")
+	public String getHome(HttpServletRequest request)
+	{
+		if(authenicate.booleanValue()==true)
+		{
+			request.setAttribute("mode", "Authorised");
+			return "AdminHome";
+		}
+		else
+		{
+//			List<Trailer> list=trailerservice.getall();	
+//			List<Vehicle> vlist=vehicleservice.getallVehicle();
+//			
+//			model.addAttribute("trailers", list);
+//			model.addAttribute("vehicles", vlist);
+			return "Home";
+		}
+	}
+	
+	
+	@GetMapping("/compatible")
+	public String getallData(Model model)
+	{
 		List<Trailer> list=trailerservice.getall();	
 		List<Vehicle> vlist=vehicleservice.getallVehicle();
 		
 		model.addAttribute("trailers", list);
 		model.addAttribute("vehicles", vlist);
-		return "Home";
+		return "Compatibility";
 	}
-	
 	
 	@PostMapping("/home")
 	public String getvalues(@RequestParam("trailer") String mytrailer,
@@ -87,7 +103,7 @@ public class ApplicationController
 			
 			if(demo.get(i).getModel().trim().equals(mytrailer.trim()))
 			{
-				System.out.println("My trailers equals is "+demo.get(i).getModel());
+				//System.out.println("My trailers equals is "+demo.get(i).getModel());
 				myid=demo.get(i).getId();
 			}
 			
@@ -96,7 +112,7 @@ public class ApplicationController
 		
 		
 		
-		System.out.println(" my Trailer is "+ myid);
+	//	System.out.println(" my Trailer is "+ myid);
 		
 		
 		Trailer return_trailer=trailerservice.getbyid(myid);
@@ -157,9 +173,10 @@ public class ApplicationController
 		return "Page4";
 	}
 	
+	
 	@PostMapping(value="/login",consumes = org.springframework.http.MediaType.ALL_VALUE)
 	public String login(@RequestParam("username") String username,@RequestParam("password") String password,
-			HttpServletRequest request)
+			HttpServletRequest request,Model model)
 	{
 		
 			Login login=lgservice.getbyusername(username);
@@ -174,7 +191,8 @@ public class ApplicationController
 			{
 				authenicate=true;
 				request.setAttribute("mode", "Authorised");
-				return "Admin";
+				model.addAttribute("name", username.toUpperCase());
+				return "AdminHome";
 			}
 			else
 			{
@@ -191,15 +209,15 @@ public class ApplicationController
 		if(authenicate.TRUE)
 		{
 			request.setAttribute("mode", "Authorised");
-			return "Admin";
+			return "AdminHome";
 		}
 		else
 		{
-			List<Trailer> list=trailerservice.getall();	
-			List<Vehicle> vlist=vehicleservice.getallVehicle();
-			
-			model.addAttribute("trailers", list);
-			model.addAttribute("vehicles", vlist);
+//			List<Trailer> list=trailerservice.getall();	
+//			List<Vehicle> vlist=vehicleservice.getallVehicle();
+//			
+//			model.addAttribute("trailers", list);
+//			model.addAttribute("vehicles", vlist);
 			return "Home";
 		}
 		
@@ -211,11 +229,11 @@ public class ApplicationController
 	{
 		authenicate=Boolean.FALSE;
 		
-		List<Trailer> list=trailerservice.getall();	
-		List<Vehicle> vlist=vehicleservice.getallVehicle();
-		
-		model.addAttribute("trailers", list);
-		model.addAttribute("vehicles", vlist);
+//		List<Trailer> list=trailerservice.getall();	
+//		List<Vehicle> vlist=vehicleservice.getallVehicle();
+//		
+//		model.addAttribute("trailers", list);
+//		model.addAttribute("vehicles", vlist);
 		return "Home";
 	}
 	
@@ -224,11 +242,11 @@ public class ApplicationController
 	@GetMapping("/logout")
 	public String logoutGet(Model model)
 	{
-		List<Trailer> list=trailerservice.getall();	
-		List<Vehicle> vlist=vehicleservice.getallVehicle();
-		
-		model.addAttribute("trailers", list);
-		model.addAttribute("vehicles", vlist);
+//		List<Trailer> list=trailerservice.getall();	
+//		List<Vehicle> vlist=vehicleservice.getallVehicle();
+//		
+//		model.addAttribute("trailers", list);
+//		model.addAttribute("vehicles", vlist);
 		return "Home";
 
 		
@@ -256,8 +274,17 @@ public class ApplicationController
 			
 	}
 
-	
 	@PostMapping(value="/admin")
+	public String getadminEntry(HttpServletRequest request)
+	{
+		authenicate=true;
+		request.setAttribute("mode", "Authorised");
+		
+		return "Admin";
+	}
+	
+	
+	@PostMapping(value="/Add")
 	public String addVehicle(@RequestParam("model") String model,
 			@RequestParam("GVM") Integer gvm,
 			@RequestParam("GCM") Integer gcm,

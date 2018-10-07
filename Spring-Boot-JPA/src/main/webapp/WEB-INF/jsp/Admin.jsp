@@ -31,7 +31,15 @@
     <img src="http://lovepreetsingh.us/CustomCSS/RAM_logo.png" height=200px; width=auto>
     <h1>Welcome to RAM Towing Trailers</h1>
     <!-- Inner Div Ended -->
+    <c:choose>
+    <c:when test="${mode == 'Authorised' }">
     <form action="/viewtables" method="Post"><button type="submit" class="btn btn-success">View Table</button> </form>
+ 	<form action="/adminhome">
+ 	<button type="submit" class="btn btn-success">Admin Home</button> 
+ 	 </form>
+ </c:when>
+ </c:choose>
+ 
  </div>
  <!-- Header Div Ended -->
  </div>
@@ -45,6 +53,7 @@
 	<div style="margin-left:50%">
 	<form action="/logout" method="post"><button type="submit" class="btn btn-danger">Logout</button> </form>
 	</div>
+	
 	<div class="row">
 	<div class="column" style="background-color:#FFF;">
     <div class="wrapper">
